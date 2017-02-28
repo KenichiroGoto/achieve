@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Achieve</title>
+    <link rel="stylesheets" href="normalize.css">
+    <link rel="stylesheets" href="top.scss">
+</head>
+<body>
+<!-- headerの内容はapplication.html.erbへ直接記載して、全画面表示させる様にした。 -->
+  <!--<header>-->
+  <!--  <ul>-->
+  <!--      <li><a href="#">Achieve</a></li>-->
+  <!--      <li><a href="#">トップページ</a></li>-->
+  <!--      <li><a href="#">お問い合わせ</a></li>-->
+  <!--      <li><a href="#">ブログ</a></li>-->
+  <!--  </ul>-->
+  <!--</header>-->
+  
+  <section class="main-header">
+    <img src="<%= asset_path "achieve.png" %>">
+  </section>
+  
+  <!-- flash message -->
+  <p><%= notice %></p>
+  
+  <section class="about">
+    <h1>About Achieve</h1>
+    <p>
+        Achieveは、受講生のために作成された、教材用アプリです。<br>
+        Achieveを作り終えることで、SecondTeamに参加するための力を身につけることができます。
+    </p>
+    <p>
+        Achieveを一言で表すと、タスク管理アプリです。<br>
+        チームメンバーが、今どのようなタスクを行っているかリアルタイムで把握することができます。
+    </p>
+  </section>
+  
+<!--
+container-fluidで画面幅一杯に評ささせる様にしている。containerでは幅一杯に表示されない。
+rowで行要素を定義。
+col-mid-3 col-sm-6 でbootstrap化。
+-->
+  <section class="function container-fluid">
+    <div class="row">
+    <h2>Function</h2>
+        <div class="function-images">
+            
+          <div class="col-md-3 col-sm-6">
+            <div class="function-image">
+                <img src="<%= asset_path "key.png" %>">
+                <p>ログイン機能</p>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="function-image">
+                <img src="<%= asset_path "mails.png" %>">
+                <p>メール送信機能</p>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="function-image">
+                <img src="<%= asset_path "girls.png" %>">
+                <p>友達つながり機能</p>
+            </div>
+          </div>
+            
+          <div class="col-md-3 col-sm-6">
+            <div class="function-image">
+                <img src="<%= asset_path "comment.png" %>">
+                <p>コメント投稿機能</p>
+            </div>
+          </div>
+            
+        </div>
+    </div>
+  </section>
+
+<!-- トップに戻るボタン -->
+<div id="page-top-btn" class="page-top-btn">
+  <p><a class="move-page-top" id="move-page-top">▲</a></p>
+</div>
+
+<!-- footerの内容はapplication.html.erbへ直接記載して、全画面表示させる様にした。 -->
+    <!--<footer>-->
+    <!--    <p>運営会社DIVE INTO CODE株式会社</p>-->
+    <!--    <p>© 2015-2016 Copyright DIVE INTO CODE corp.</p>-->
+    <!--</footer>-->
+    
+</body>
+</html>
