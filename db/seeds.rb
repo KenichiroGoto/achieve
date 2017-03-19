@@ -10,9 +10,11 @@
 
 # 下記はgem 'faker'を入れて、ダミーデータを作成
 100.times do |n|
+  name = Faker::Internet.user_name
   email = Faker::Internet.email
   password = "password"
-  User.create!(email: email,
+  User.create!(name: name,
+        email: email,
         password: password,
         password_confirmation: password,
         )
