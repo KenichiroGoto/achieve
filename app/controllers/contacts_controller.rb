@@ -19,6 +19,7 @@ class ContactsController < ApplicationController
   
   def confirm
     @contact = Contact.new(contacts_params)
+    # render :new unless @contact.valid?
     render :new if @contact.invalid?
   end
   

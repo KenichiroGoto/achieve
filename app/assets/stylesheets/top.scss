@@ -94,6 +94,11 @@ header {
     padding-top: 15%;
 }
 
+.flash {
+    color: white;
+    padding-top: 10px;
+}
+
 .about {
     background-color: white;
     color: #333;
@@ -138,6 +143,7 @@ body {
 }
 
 footer {
+    display: block;
     position: absolute;
     bottom: 0;
     width: 100%;
