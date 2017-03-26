@@ -1,9 +1,10 @@
 <%= form_for(@blog, url: choose_new_or_edit) do |f| %>
- <% if @blog.errors.any? %>
+ <!-- 下記エラー表示方法を、<%= f.error_messages! %>にて代用する -->
+ <!-- <% if @blog.errors.any? %>
   <div id="error_explanation">
    <%#バリデーションエラーの件数を表示します。%>
    <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
-   
+
    <ul>
    <%# @blog.errorsは@blogをバリデーションした際のエラー情報です。
        #full_messagesは複数のエラーメッセージを表します。 %>
@@ -12,7 +13,9 @@
    <% end %>
    </ul>
   </div>
- <% end %>
+ <% end %> -->
+
+ <%= f.error_messages! %>
 
  <%= f.label :title %>
  <%= f.text_field :title, class: 'form-control' %>
