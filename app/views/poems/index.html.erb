@@ -1,4 +1,16 @@
-<% @poems.each do |poem| %>
-  <%= poem.title %>
-  <%= poem.content %>
-<% end %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+
+    <h4>ポエム一覧</h4>
+
+    <% @poems.each do |poem| %>
+      <div class="row">
+        <p>タイトル：<%= poem.title %></p>
+        <p><%= poem.content %></p>
+        <%= link_to "詳細", poem_path(poem.id), class: 'btn btn-default btn-sm btn-success'%>
+      </div>
+    <% end %>
+
+  </div>
+</div>
