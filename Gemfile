@@ -54,6 +54,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 gem 'activeresource'
@@ -67,3 +68,7 @@ gem 'rails_admin'
 gem 'cancan'
 
 gem 'her'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
