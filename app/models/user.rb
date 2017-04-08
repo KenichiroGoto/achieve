@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
+  mount_uploader :avatar, AvatarUploader
+
   # has_manyメソッドでは何も指定しなくても主キーをidカラム、外部キーを関係させるモデル_idに指定する。
   # 今回は関係させるモデルがuserであるため、user_idになる。
   has_many :blogs
@@ -46,6 +48,15 @@ class User < ActiveRecord::Base
 
   def self.create_unique_string
     SecureRandom.uuid
+  end
+
+  def update_with_password(params, *options)
+    if provider.blank?
+      super
+    else
+      params.delete :current_password
+      update_without_password(params, *options)
+    end
   end
 
 end
