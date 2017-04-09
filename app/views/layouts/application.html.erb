@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Achieve</title>
+  <link rel="stylesheets" href="normalize.css">
   <!--下記meta name="viewport~ を入れないと、web上のデザインがスマホサイズに圧縮された状態になってしまう。-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -18,7 +19,7 @@
     <!--    <li><%= link_to "お問い合わせ", new_contact_path %></li>-->
     <!--    <li><%= link_to "ブログ", blogs_path %></li>-->
     <!--</ul>-->
-    
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -52,7 +53,7 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-    
+
   </header>
 
 <%= yield %>

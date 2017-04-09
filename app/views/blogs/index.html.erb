@@ -1,20 +1,32 @@
+<!-- <link rel="stylesheets" href="blogs.scss"> -->
+
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10">
     <p><%= notice %></p>
-    
+
     <h1>ブログ一覧</h1>
-    
+
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
-    
-    <% @blogs.each do |blog| %>
-    <div class="row">
-      <h4><strong><%= blog.title %></strong></h4>
-      <p>投稿者:<%= blog.user.name %></p>
-      <p><%= blog.content %></p>
-      <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
-      <%= link_to "削除", blog_path(blog.id), data: { confirm: '本当に削除していいですか？' }, method: :delete, class: 'btn btn-default btn-sm btn btn-danger' %>
-    </div>
-    <% end %>
+
+      <% @blogs.each do |blog| %>
+      <div class="row">
+        <div class = "blogs_box">
+            <div class = "user_info" >
+              <div class = "index_profile_image">
+                <%= profile_img(blog.user) %>
+              </div>
+              <p><%= blog.user.name %>が投稿しました。</p>
+              <p>投稿日時：<%= blog.user.updated_at %></p>
+            </div>
+            <div class = "blogs_content" >
+              <h4><strong><%= blog.title %></strong></h4>
+              <p><%= blog.content %></p>
+            </div>
+          <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
+          <%= link_to "削除", blog_path(blog.id), data: { confirm: '本当に削除していいですか？' }, method: :delete, class: 'btn btn-default btn-sm btn btn-danger' %>
+        </div>
+      </div>
+      <% end %>
 
   </div>
 </div>
