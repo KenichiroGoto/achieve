@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h2>コメントを更新する</h2>
+
+    <div class="blog-text">
+      <div class = "user_info" >
+        <div class = "index_profile_image">
+          <%= profile_img(@blog.user) %>
+        </div>
+        <p><%= @blog.user.name %>さんが投稿しました。</p>
+        <p>投稿日時：<%= @blog.updated_at %></p>
+      </div>
+      <p class="left"><strong>タイトル</strong></p>
+      <p class="left"><%= @blog.title %></p>
+      <p class="left"><strong>内容</strong></p>
+      <p class="left"><%= @blog.content %></p>
+      <p class="right">
+        <strong>作成時間</strong>
+        <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
+      </p>
+    </div>
+
+    <%= form_for(@comment, url: blog_comment_path) do |f| %>
+
+     <%= f.error_messages! %>
+
+     <%= f.label :content %>
+     <%= f.text_area :content, :size => "20x8", class: 'form-control' %>
+     <br>
+     <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+    <% end %>
+
+    <%= link_to "コメント一覧画面にもどる", blog_path(@blog.id) %>
+  </div>
+</div>

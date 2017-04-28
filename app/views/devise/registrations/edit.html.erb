@@ -50,7 +50,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "更新" %>
+        <%= f.submit "更新", class: "btn btn-primary btn-block" %>
       </div>
     <% end %>
 
@@ -59,7 +59,7 @@
     </br>
     <h4>アカウントの消去</h4>
 
-    <p> <%= button_to "アカウントの消去", registration_path(resource_name), data: { confirm: "本当に消去しますか?" }, method: :delete %></p>
+    <p> <%= button_to "アカウントの消去", registration_path(resource_name), data: { confirm: "本当に消去しますか?" }, method: :delete, class: "btn btn-primary btn-block" %></p>
 
     <%= link_to "Back", :back %>
 

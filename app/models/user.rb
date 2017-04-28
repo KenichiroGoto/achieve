@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 
   # has_manyメソッドでは何も指定しなくても主キーをidカラム、外部キーを関係させるモデル_idに指定する。
   # 今回は関係させるモデルがuserであるため、user_idになる。
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
     user = User.find_by(provider: auth.provider, uid: auth.uid)

@@ -128,6 +128,27 @@ header {
   padding-bottom: 100px;
 }
 
+.blogs_box {
+  border-bottom: solid #D3D3D3 1px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.user_info {
+  display: block;
+}
+
+.blogs_content {
+  text-align: left;
+}
+
+.index_profile_image img{
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  max-width: 40px;
+}
+
 footer {
     width: 100%;
     background-color: #2c3e50;
