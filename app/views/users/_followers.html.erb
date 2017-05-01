@@ -1,0 +1,18 @@
+<h4><%= @user.name %>をフォローしている人 </h4>
+<% @followers.each do |user| %>
+<% unless current_user.id == user.id  then %>
+  <div class="container-child col-xl-3 col-lg-4 col-md-5 col-sm-6 col-xs-12">
+    <div class="follow_box">
+      <div class="follow_inbox">
+
+        <div class="index_profile_image">
+          <%= profile_img(user) %>
+        </div>
+        <%= user.name %>
+        <%= render 'follow_form', user: user %>
+      </div>
+
+    </div>
+  </div>
+<% end %>
+<% end %>

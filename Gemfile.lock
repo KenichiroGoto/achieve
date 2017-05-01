@@ -57,6 +57,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    choice (0.2.0)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -181,6 +182,7 @@ GEM
       rack (>= 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    railroady (1.5.2)
     rails (4.2.3)
       actionmailer (= 4.2.3)
       actionpack (= 4.2.3)
@@ -198,6 +200,11 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-erd (1.5.0)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails-observers (0.1.2)
@@ -231,6 +238,7 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rmagick (2.16.0)
+    ruby-graphviz (1.2.3)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -300,7 +308,9 @@ DEPENDENCIES
   omniauth-twitter
   pg
   pry-rails
+  railroady
   rails (= 4.2.3)
+  rails-erd
   rails_12factor
   rails_admin
   rmagick

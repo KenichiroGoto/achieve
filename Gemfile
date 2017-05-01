@@ -57,6 +57,11 @@ group :development do
   gem 'dotenv-rails'
 end
 
+group :development, :test do
+  gem 'rails-erd'
+  gem 'railroady'
+end
+
 gem 'activeresource'
 
 gem 'devise'

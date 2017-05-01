@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+
+    <div class="wrapper col-md-6 col-sm-6 col-xs-6">
+      <div class="row">
+        <%= render partial: 'followed_users', locals: {user: @user, followed_users: @followed_users} %>
+      </div>
+    </div>
+
+    <div class="wrapper col-md-6 col-sm-6 col-xs-6">
+      <div class="row">
+        <%= render partial: 'followers', locals: {user: @user, followers: @followers} %>
+      </div>
+    </div>
+
+  </div>
+  <%= link_to "戻る", users_path %>
+</div>
