@@ -1,0 +1,6 @@
+<h1>Messages#create</h1>
+<p>Find me in app/views/messages/create.html.erb</p>
+<%= form_for(@message, url: conversation_messages_path) do |f| %>
+ <%= f.error_messages! %>
+ <%= link_to "戻る", conversation_messages_path %>
+<% end %>
