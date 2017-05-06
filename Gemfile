@@ -83,3 +83,5 @@ gem 'rmagick'
 
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'faraday', '< 0.10'
+
+gem 'pusher'
