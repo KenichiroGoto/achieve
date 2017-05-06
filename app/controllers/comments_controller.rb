@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
     @notification = @comment.notifications.build(user_id: @blog.user.id)
+    # 自分のブログへコメントする場合は既読にしておく
+    @notification.read = true if @comment.blog.user_id == current_user.id
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
@@ -18,6 +20,7 @@ class CommentsController < ApplicationController
             message: 'あなたの作成したブログにコメントが付きました'
             })
         end
+
         # 通知未読カウント処理
         Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
           unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count

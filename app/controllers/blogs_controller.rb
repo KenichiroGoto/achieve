@@ -35,7 +35,12 @@ class BlogsController < ApplicationController
   def show
     @comment = @blog.comments.build
     @comments = @blog.comments
-    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
+    if params[:notification_id]
+      Notification.find(params[:notification_id]).update(read: true)
+      Pusher.trigger("user_#{@blog.user_id}_channel", 'notification_created', {
+        unread_counts: Notification.where(user_id: @blog.user.id, read: false).count
+        })
+    end
   end
 
   def edit

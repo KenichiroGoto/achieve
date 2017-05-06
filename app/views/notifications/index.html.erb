@@ -4,23 +4,30 @@
       <h4>通知一覧</h4>
         <ul>
           <% @notifications.each do |notification| %>
-          <hr>
-              <span>
-                <% if notification.read == false %>
-                  <div class="alert alert-danger">
-                    <p>未読</p>
+          <div class="notification_area">
+              <div class="notification_alert">
+                <span>
+                  <% if notification.read == false %>
+                    <div class="alert alert-danger">
+                      <p>未読</p>
+                    </div>
+                  <% else %>
+                  <div class="alert alert-info">
+                    <p>既読</p>
                   </div>
-                <% else %>
-                <div class="alert alert-info">
-                  <p>既読</p>
+                  <% end %>
+                </span>
+              </div>
+              <div class="comment_user_avatar">
+                <div class = "index_profile_image">
+                  <%= profile_img(notification.comment.user) %>
                 </div>
-                <% end %>
-              </span>
-              <p>
-                <%= notification.comment.user.try!(:name) %>さんが
-                あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
-              </p>
-              <p><%= notification.created_at %></p>
+              </div>
+              <div class="notification_content">
+                <p><%= notification.comment.user.try!(:name) %>さんがあなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。</p>
+                <p><%= notification.created_at %></p>
+              </div>
+            </div>
           <% end %>
         </ul>
 

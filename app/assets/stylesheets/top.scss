@@ -170,14 +170,27 @@ header {
   font-size: 14px;
 }
 
-.display_unread {
-  background-color: red;
-  color: white;
+.notification_area {
+  display: flex;
+  border-bottom: solid 1px #D3D3D3;
+  margin-left: auto;
+  padding-top: 20px;
 }
 
-.display_read {
-  background-color: blue;
-  color: white;
+.notification_alert {
+  width: 70px;
+}
+
+.notification_content {
+  padding-left: 5px;
+  flex: 1;
+  // margin-left: 0;
+}
+
+.comment_user_avatar {
+  width: 50px;
+  padding-top: 5px;
+  text-align: center;
 }
 
 footer {
