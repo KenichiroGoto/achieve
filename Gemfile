@@ -36,11 +36,22 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'rails-erd'
+  gem 'railroady'
+
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
+
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -50,21 +61,20 @@ gem 'jquery-turbolinks'
 gem 'rails_12factor', group: :production
 
 group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'letter_opener_web'
 end
 
-group :development, :test do
-  gem 'rails-erd'
-  gem 'railroady'
-
-  gem 'capistrano', '3.6.0'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-unicorn'
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
 end
 
 gem 'activeresource'
