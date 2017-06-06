@@ -25,6 +25,12 @@ module Achieve
 
     config.action_view.field_error_proc = proc { |html_tag, _| html_tag }
 
+    # Do not generate automatically helper files and assets files in generate controller
+    config.generate do |g|
+      g.assets false
+      g.helper false
+    end
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
